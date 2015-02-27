@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+int matriz_simetrica(int mat[3][3]);
+main ()
+{
+    int matriz[3][3],i,j,res;
+    for (i=0;i<3;i++)
+    {
+        printf ("\nDIGITE TRES ELEMENTOS DA LINHA %d DA MATRIZ.\n",i);
+        for (j=0;j<3;j++)
+        scanf ("%d",&matriz[i][j]);
+    }
+    res=matriz_simetrica(matriz);
+    if (res)
+    printf ("\nMATRIZ SIMETRICA.\n\n");
+    else
+    printf ("\nMATRIZ NAO SIMETRICA.\n\n");
+    return 0;
+    system("pause");
+}
+int matriz_simetrica(int mat[3][3])
+{
+    int i,j,res=1;
+    for (i=0;i<3;i++)
+    for (j=0;j<3;j++)
+    if (mat[i][j]!=mat[j][i])
+    res=0;
+    return res;
+}
